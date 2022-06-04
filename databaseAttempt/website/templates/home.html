@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+    
+        <title>{% block title %}ELIDEK home page{% endblock %}</title>
+    </head>
+    <body>
+        <form method = "POST">
+            <h1>ELIDEK Database Homepage</h1>
+            <h3>Select an action</h3>
+            <div>
+                <input type="radio" id="available_programmes" name="action" value="available_programmes">
+                <label for="available_programmes">View available programmes</label><br>
+            </div>
+            <div>
+                <input type="radio" id="projects" name="action" value="projects">
+                <label for="projects">Search for projects</label><br>
+            </div>
+            <div>
+                <input type="radio" id="two_views" name="action" value="two_views">
+                <label for="two_views">Two views</label>
+            </div>
+            <div>
+                <input type="radio" id="s_interest" name="action" value="s_interest">
+                <label for="s_interest">Science field of interest</label>
+            </div>
+            <div>
+                <input type="radio" id="o_same" name="action" value="o_same">
+                <label for="o_same">Organisations that took on the same amount of projects (10+) in two consecutive years</label>
+            </div>
+            <div>
+                <input type="radio" id="s_pairs" name="action" value="s_pairs">
+                <label for="s_pairs">Top 3 scientific field pairs</label>
+            </div>
+            <div>
+                <input type="radio" id="young_researchers" name="action" value="young_researchers">
+                <label for="young_researchers">Young researchers that work on the most active projects</label>
+            </div>
+            <div>
+                <input type="radio" id="top_exec" name="action" value="top_exec">
+                <label for="top_exec">Top 5 executives</label>
+            </div>
+            <div>
+                <input type="radio" id="no_deliverables" name="action" value="no_deliverables">
+                <label for="no_deliverables">Researchers that work on 5 or more projects with no deliverables</label>
+            </div>
+            <div>
+                <input type="radio" id="CRUD" name="action" value="CRUD">
+                <label for="CRUD">CRUD</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </body>
+
+
+</html>

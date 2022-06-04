@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+    
+        <title>{% block title %}CRUD researcher{% endblock %}</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>researcher_id</th>
+                <th>first_name</th>
+                <th>last_name</th>
+                <th>birth_date</th>
+                <th>sex</th>
+                <th>employee_organisation_id</th>
+                <th>employee_date</th>
+            </tr>
+            {% for x in res_CRUD %}
+            <tr>
+                {% for i in x %}
+                <td> {{i}} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <form method = "POST">
+            <h3>Edit Researcher</h3>
+            <div class="form-group">
+                <label for="first_name">first_name</label>
+                <input type="text" 
+                class="form-control" 
+                id="first_name" 
+                name="first_name">
+            </div>
+            <div class="form-group">
+                <label for="last_name">last_name</label>
+                <input type="text" 
+                class="form-control" 
+                id="last_name" 
+                name="last_name">
+            </div>
+            <div class="form-group">
+                <label for="birth_date">birth_date</label>
+                <input type="date" 
+                class="form-control" 
+                id="birth_date" 
+                name="birth_date">
+            </div>
+            <div>
+                <label for="sex">sex</label>
+                <input type="text"
+                list="sex" 
+                name="sex">
+                <datalist id="sex">
+                    <option value="Female">
+                    <option value="Male">
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label for="eo_ID">employee_organisation_id</label>
+                <input type="text" 
+                class="form-control" 
+                id="eo_ID" 
+                name="eo_ID">
+            </div>
+            <div class="form-group">
+                <label for="employee_date">employee_date</label>
+                <input type="date" 
+                class="form-control" 
+                id="employee_date" 
+                name="employee_date">
+            </div>
+            <div>
+                <label for="action">Choose action</label>
+                <input type="text"
+                list="action" 
+                name="action">
+                <datalist id="action">
+                    <option value="Insert">
+                    <option value="Update">
+                    <option value="Delete">
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label for="ID">ID to update/delete</label>
+                <input type="text" 
+                class="form-control" 
+                id="ID" 
+                name="ID">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </body>
+
+
+</html>

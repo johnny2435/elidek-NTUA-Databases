@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+    
+        <title>{% block title %}CRUD{% endblock %}</title>
+    </head>
+    <body>
+        <form method = "POST">
+            <h1>CRUD</h1>
+            <h3>Select a table to edit</h3>
+            <div>
+                <input type="radio" id="project" name="table" value="project">
+                <label for="project">project</label><br>
+            </div>
+            <div>
+                <input type="radio" id="organisation" name="table" value="organisation">
+                <label for="organisation">organisation</label><br>
+            </div>
+            <div>
+                <input type="radio" id="researcher" name="table" value="researcher">
+                <label for="researcher">researcher</label><br>
+            </div>
+            <div>
+                <input type="radio" id="works_on" name="table" value="works_on">
+                <label for="works_on">works_on</label><br>
+            </div>
+            <div>
+                <input type="radio" id="executive" name="table" value="executive">
+                <label for="executive">executive</label><br>
+            </div>
+            <div>
+                <input type="radio" id="science_field" name="table" value="science_field">
+                <label for="science_field">science_field</label><br>
+            </div>
+            <div>
+                <input type="radio" id="project_science_field" name="table" value="project_science_field">
+                <label for="project_science_field">project_science_field</label><br>
+            </div>
+            <div>
+                <input type="radio" id="programme" name="table" value="programme">
+                <label for="programme">programme</label><br>
+            </div>
+            <div>
+                <input type="radio" id="company" name="table" value="company">
+                <label for="company">company</label><br>
+            </div>
+            <div>
+                <input type="radio" id="university" name="table" value="university">
+                <label for="university">university</label><br>
+            </div>
+            <div>
+                <input type="radio" id="research_centre" name="table" value="research_centre">
+                <label for="research_centre">research_centre</label><br>
+            </div>
+            <div>
+                <input type="radio" id="deliverable" name="table" value="deliverable">
+                <label for="deliverable">deliverable</label><br>
+            </div>
+            <div>
+                <input type="radio" id="phone_number" name="table" value="phone_number">
+                <label for="phone_number">project_science_field</label><br>
+            </div>
+            <div>
+                <input type="radio" id="evaluates" name="table" value="evaluates">
+                <label for="evaluates">evaluates</label><br>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </body>
+
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+    
+        <title>{% block title %}Project List{% endblock %}</title>
+    </head>
+    <body>
+            <h3>Project List</h3>
+            <table>
+                <form method = "POST">
+                <tr>
+                <th>Project Title</th>
+                <th>Funding amount(in euros)</th>
+                <th>Start date</th>
+                </tr>
+            {% for x in project_list %}
+            <tr>
+                <td>
+            <input type="radio" 
+                    id="{{x[0]}}" 
+                    name="project_name" 
+                    value="{{x[0]}}">
+            <label for="{{x[0]}}">
+                {{x[0]}}
+            </label><br>
+            </td>
+            <td>{{x[1]}}</td>
+            <td>{{x[2]}}</td>
+            </tr>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">View Researchers Working on the selected Project</button>
+            </form>
+            </table>
+            
+        
+       
+    </body>
+
+
+</html>

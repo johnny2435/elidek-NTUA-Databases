@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+    
+        <title>{% block title %}Science Field - Projects{% endblock %}</title>
+    </head>
+    <body>
+        <form method = "POST">
+            <h3>Search active projects based on preferred science field</h3>
+            <div>
+                <label for="science_field">Choose a science field</label>
+                <input type="text"
+                list="science_field" 
+                name="science_field"
+                placeholder = "Select a science field">
+                <datalist id="science_field">
+                    {% for name in science_field_list %}
+                    <option value="{{name[0]}}">
+                    {%endfor%}
+                </datalist>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </body>
+
+
+</html>

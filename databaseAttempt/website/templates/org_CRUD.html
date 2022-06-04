@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+    
+        <title>{% block title %}CRUD organisation{% endblock %}</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>abbreviation</th>
+                <th>postal_address</th>
+                <th>street</th>
+                <th>city</th>
+            </tr>
+            {% for x in org_CRUD %}
+            <tr>
+                {% for i in x %}
+                <td> {{i}} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <form method = "POST">
+            <h3>Edit Organisation</h3>
+            <div class="form-group">
+                <label for="name">name</label>
+                <input type="text" 
+                class="form-control" 
+                id="name" 
+                name="name">
+            </div>
+            <div class="form-group">
+                <label for="abbr">abbreviation</label>
+                <input type="text" 
+                class="form-control" 
+                id="abbr" 
+                name="abbr">
+            </div>
+            <div class="form-group">
+                <label for="postal_address">postal_address</label>
+                <input type="text" 
+                class="form-control" 
+                id="postal_address" 
+                name="postal_address">
+            </div>
+            <div class="form-group">
+                <label for="street">street</label>
+                <input type="text" 
+                class="form-control" 
+                id="street" 
+                name="street">
+            </div>
+            <div class="form-group">
+                <label for="city">city</label>
+                <input type="text" 
+                class="form-control" 
+                id="city" 
+                name="city">
+            </div>
+            <div>
+                <label for="action">Choose action</label>
+                <input type="text"
+                list="action" 
+                name="action">
+                <datalist id="action">
+                    <option value="Insert">
+                    <option value="Update">
+                    <option value="Delete">
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label for="ID">ID to update/delete</label>
+                <input type="text" 
+                class="form-control" 
+                id="ID" 
+                name="ID">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </body>
+
+
+</html>

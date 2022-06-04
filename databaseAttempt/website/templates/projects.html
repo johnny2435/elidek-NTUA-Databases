@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+    
+        <title>{% block title %}Projects{% endblock %}</title>
+    </head>
+    <body>
+        <form method = "POST">
+            <h3>Search Projects</h3>
+            <div class="form-group">
+                <label for="init_date">From</label>
+                <input type="date" 
+                class="form-control" 
+                id="init_date" 
+                name="init_date">
+            </div>
+            <div class="form-group">
+                <label for="final_date">To</label>
+                <input type="date" 
+                class="form-control" 
+                id="final_date" 
+                name="final_date">
+            </div>
+            <div class="form-group">
+                <label for="min_dur">Minimum duration (in days)</label>
+                <input type="number" 
+                class="form-control" 
+                id="min_dur" 
+                name="min_dur">
+            </div>
+            <div class="form-group">
+                <label for="max_dur">Maximum duration (in days)</label>
+                <input type="number" 
+                class="form-control" 
+                id="max_dur" 
+                name="max_dur">
+            </div>
+            <div>
+                <label for="executive">Executive in charge</label>
+                <input type="text"
+                list="executive" 
+                name="executive">
+                <datalist id="executive">
+                    {% for name in exec_name %}
+                    <option value="{{name[1]}}">
+                    {%endfor%}
+                </datalist>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </body>
+
+
+</html>

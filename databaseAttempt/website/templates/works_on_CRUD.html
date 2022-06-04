@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+    
+        <title>{% block title %}CRUD works_on{% endblock %}</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>project_id</th>
+                <th>researcher_id</th>
+            </tr>
+            {% for x in works_on %}
+            <tr>
+                {% for i in x %}
+                <td> {{i}} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <form method = "POST">
+            <h3>Edit works_on</h3>
+            <div class="form-group">
+                <label for="project_id">project_id</label>
+                <input type="text" 
+                class="form-control" 
+                id="project_id" 
+                name="project_id">
+            </div>
+            <div class="form-group">
+                <label for="researcher_id">researcher_id</label>
+                <input type="text" 
+                class="form-control" 
+                id="researcher_id" 
+                name="researcher_id">
+            </div>
+            <div>
+                <label for="action1">Choose action</label>
+                <input type="text"
+                list="action1" 
+                name="action1">
+                <datalist id="action1">
+                    <option value="Insert">
+                    <option value="Delete">
+                </datalist>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </body>
+
+
+</html>

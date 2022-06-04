@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+    
+        <title>{% block title %}CRUD project{% endblock %}</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>project_id</th>
+                <th>title</th>
+                <th>summary</th>
+                <th>funding_amount</th>
+                <th>start_date</th>
+                <th>end_date</th>
+                <th>executive_id</th>
+                <th>programme_id</th>
+                <th>supervisor_researcher_id</th>
+                <th>organisation_id</th>
+            </tr>
+            {% for x in proj_CRUD %}
+            <tr>
+                {% for i in x %}
+                <td> {{i}} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <form method = "POST">
+            <h3>Edit Project</h3>
+            <div class="form-group">
+                <label for="title">title</label>
+                <input type="text" 
+                class="form-control" 
+                id="title" 
+                name="title">
+            </div>
+            <div class="form-group">
+                <label for="summary">summary</label>
+                <input type="text" 
+                class="form-control" 
+                id="summary" 
+                name="summary">
+            </div>
+            <div class="form-group">
+                <label for="funding_amount">funding_amount</label>
+                <input type="text" 
+                class="form-control" 
+                id="funding_amount" 
+                name="funding_amount">
+            </div>
+            <div class="form-group">
+                <label for="start_date">start_date</label>
+                <input type="date" 
+                class="form-control" 
+                id="start_date" 
+                name="start_date">
+            </div>
+            <div class="form-group">
+                <label for="end_date">end_date</label>
+                <input type="date" 
+                class="form-control" 
+                id="end_date" 
+                name="end_date">
+            </div>
+            <div class="form-group">
+                <label for="executive_id">executive_id</label>
+                <input type="text" 
+                class="form-control" 
+                id="executive_id" 
+                name="executive_id">
+            </div>
+            <div class="form-group">
+                <label for="programme_id">programme_id</label>
+                <input type="text" 
+                class="form-control" 
+                id="programme_id" 
+                name="programme_id">
+            </div>
+            <div class="form-group">
+                <label for="supervisor_researcher_id">supervisor_researcher_id</label>
+                <input type="text" 
+                class="form-control" 
+                id="supervisor_researcher_id" 
+                name="supervisor_researcher_id">
+            </div>
+            <div class="form-group">
+                <label for="organisation_id">organisation_id</label>
+                <input type="text" 
+                class="form-control" 
+                id="organisation_id" 
+                name="organisation_id">
+            </div>
+            <div>
+                <label for="action">Choose action</label>
+                <input type="text"
+                list="action" 
+                name="action">
+                <datalist id="action">
+                    <option value="Insert">
+                    <option value="Update">
+                    <option value="Delete">
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label for="ID">ID to update/delete</label>
+                <input type="text" 
+                class="form-control" 
+                id="ID" 
+                name="ID">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </body>
+
+
+</html>
