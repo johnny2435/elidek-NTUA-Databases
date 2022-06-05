@@ -156,3 +156,34 @@ join researcher r on r.researcher_id = w.researcher_id;
 CREATE VIEW org_university_view AS
 SELECT o.name 
 FROM organisation o join university u on u.organisation_id = o.organisation_id;
+
+DELIMITER ;;
+CREATE TRIGGER `works_on_tr` AFTER INSERT ON `works_on` FOR EACH ROW BEGIN
+    IF ((SELECT o.organisation_id from project p join organisation o on p.organisation_id = o.organisation_id where new.project_id = p.project_id) != (SELECT o.organisation_id from researcher r join organisation o on r.employee_organisation_id = o.organisation_id where new.researcher_id = r.researcher_id))
+    THEN
+        signal sqlstate '45000';
+    END IF;
+  END;;
+  
+CREATE TRIGGER `supervisor_tr` AFTER INSERT ON `project` FOR EACH ROW BEGIN
+    IF ((SELECT o.organisation_id from project p join organisation o on p.organisation_id = o.organisation_id where new.project_id = p.project_id) != (SELECT o.organisation_id from researcher r join organisation o on r.employee_organisation_id = o.organisation_id where new.supervisor_researcher_id = r.researcher_id))
+    THEN
+        signal sqlstate '45000';
+    END IF;
+  END;;
+
+CREATE TRIGGER `supervisor_tri` AFTER UPDATE ON `project` FOR EACH ROW BEGIN
+    IF ((SELECT o.organisation_id from project p join organisation o on p.organisation_id = o.organisation_id where new.project_id = p.project_id) != (SELECT o.organisation_id from researcher r join organisation o on r.employee_organisation_id = o.organisation_id where new.supervisor_researcher_id = r.researcher_id))
+    THEN
+        signal sqlstate '45000';
+    END IF;
+  END;;
+  
+  CREATE TRIGGER `evaluates_tr` AFTER INSERT ON `evaluates` FOR EACH ROW BEGIN
+    IF ((SELECT o.organisation_id from project p join organisation o on p.organisation_id = o.organisation_id where new.project_id = p.project_id) = (SELECT o.organisation_id from researcher r join organisation o on r.employee_organisation_id = o.organisation_id where new.researcher_id = r.researcher_id))
+    THEN
+        signal sqlstate '45000';
+    END IF;
+  END;;
+  
+DELIMITER ;
