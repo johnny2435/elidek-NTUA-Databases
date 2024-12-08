@@ -31,11 +31,6 @@ This project involved the complete development of a relational database to manag
 - **Python** for database connection, query execution, and data generation.
 - **HTML** for front-end CRUD functionalities and specific queries.
 
-## Project Structure
-- **`schema.sql`**: Full SQL implementation of the database schema.
-- **`data_gen.py`**: Python script for populating the database with sample data.
-- **`website/`**: Folder containing the HTML-based front-end for interacting with the database.
-
 ## Code Highlights
 - The database schema includes tables for projects, researchers, organizations (with subtypes for universities, companies, and research centers), and deliverables.
 - Views provide summarized information for users, such as `project_researcher_view` and `org_university_view`.
